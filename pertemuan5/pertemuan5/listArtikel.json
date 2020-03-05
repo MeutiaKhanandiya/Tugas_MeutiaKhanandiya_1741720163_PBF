@@ -1,0 +1,22 @@
+{
+  "Post": [
+    {
+      "id": 1583422252300,
+      "NIM": "124632416524",
+      "nama": "Meutia",
+      "alamat": "malang",
+      "hp": "082246619492",
+      "angkatan": "2017",
+      "status": "aktif"
+    },
+    {
+      "id": 1583422711959,
+      "NIM": "12243554565768",
+      "nama": "ravena",
+      "alamat": "malang",
+      "hp": "083463773624",
+      "angkatan": "2017",
+      "status": "aktif"
+    }
+  ]
+}

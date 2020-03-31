@@ -53,6 +53,7 @@ export default function AuthExample() {
                 <a className="nav-item nav-link active" href="/public">Home <span className="sr-only">(current)</span></a>
                 <a className="nav-item nav-link active" href="/login">Makeup</a>
                 <a className="nav-item nav-link active" href="/skincare">Skincare</a>
+                <a className="nav-item nav-link active" href="/loginn">Login</a>
 
               </div>
             </div>
@@ -71,6 +72,9 @@ export default function AuthExample() {
         <Switch>
           <Route path="/public">
             <PublicPage />
+          </Route>
+          <Route path="/loginn">
+            <LoginnPage />
           </Route>
           <Route path="/login">
             <LoginPage />
@@ -98,7 +102,24 @@ const fakeAuth = {
     setTimeout(cb, 100);
   }
 };
+function LoginnPage(){
+  let history = useHistory();
+  let location = useLocation();
 
+  let { from } = location.state || { from: { pathname: "" } };
+  let login = () => {
+    fakeAuth.authenticate(() => {
+      history.replace(from);
+    });
+  };
+
+  return (
+    <div>
+      <p>SELAMAT DATANG DI SEPHORA!{from.pathname}</p>
+      <button onClick={login}>Log in</button>
+    </div>
+  );
+}
 function AuthButton() {
   let history = useHistory();
   return fakeAuth.isAuthenticated ? (
@@ -271,13 +292,11 @@ function LoginPage() {
           <button onClick={login} type="button" className="btn btn-secondary btn-lg btn-block">PERONA PIPI</button>
         </div>
 
-
-
-
       </div>
     </div>
   );
 }
+
 function App() {
   return (
     <Router>

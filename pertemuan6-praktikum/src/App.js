@@ -51,24 +51,6 @@ export default function AuthExample(){
     }
   };
 
-  function AuthButton() {
-    let history = useHistory();
-    
-    return fakeAuth.isAuthenticated ? (
-      <p>
-        Welcome!{" "}
-        <button
-         onClick={() => {
-           fakeAuth.signout(() => history.push("/"));
-         }}
-        >
-          Sign out
-        </button>
-      </p>
-    ) : (
-      <p>You are not logged in.</p>
-    );
-  }
 // Pembungkus untuk <Route> yang mengarahkan ke login
 
 function PrivateRoute({ children, ...rest}) {

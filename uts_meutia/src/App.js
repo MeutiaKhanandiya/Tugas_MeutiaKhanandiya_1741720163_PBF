@@ -33,7 +33,7 @@ import {
   Redirect,
   useHistory
 } from "react-router-dom";
-import { logDOM } from '@testing-library/react';
+
 
 export default function AuthExample() {
   return (
@@ -50,10 +50,12 @@ export default function AuthExample() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav">
+                <a className="nav-item nav-link active" href="/loginn">Login</a>
                 <a className="nav-item nav-link active" href="/public">Home <span className="sr-only">(current)</span></a>
                 <a className="nav-item nav-link active" href="/login">Makeup</a>
                 <a className="nav-item nav-link active" href="/skincare">Skincare</a>
-                <a className="nav-item nav-link active" href="/loginn">Login</a>
+                <a className="nav-item nav-link active" href="/logout">Logout</a>
+                
 
               </div>
             </div>
@@ -70,20 +72,23 @@ export default function AuthExample() {
           </li>
         </ul> */}
         <Switch>
-          <Route path="/public">
+        <Route path="/beranda">
+              <BerandaPage />
+            </Route>
+          <PrivateRoute exact path="/public">
             <PublicPage />
-          </Route>
+          </PrivateRoute>
           <Route path="/loginn">
             <LoginnPage />
           </Route>
           <Route path="/login">
             <LoginPage />
           </Route>
-          <Route path="/skincare">
-            <SkincarePage />
+          <Route path="/logout">
+            <LogOut />
           </Route>
-          <PrivateRoute path="/private">
-            <ProtectedPage />
+          <PrivateRoute path="/skincare">
+            <SkincarePage />
           </PrivateRoute>
         </Switch>
       </div>
@@ -93,7 +98,7 @@ export default function AuthExample() {
 
 const fakeAuth = {
   isAuthenticated: false,
-  Authenticate(cb) {
+  authenticate(cb) {
     fakeAuth.isAuthenticated = true;
     setTimeout(cb, 100);
   },
@@ -106,32 +111,54 @@ function LoginnPage(){
   let history = useHistory();
   let location = useLocation();
 
-  let { from } = location.state || { from: { pathname: "" } };
-  let login = () => {
+  let { from } = location.state || { from: { pathname: "/loginn" } };
+  let loginn = () => {
     fakeAuth.authenticate(() => {
       history.replace(from);
     });
   };
 
   return (
-    <div>
-      <p>SELAMAT DATANG DI SEPHORA!{from.pathname}</p>
-      <button onClick={login}>Log in</button>
+    <div className="container">
+      <h1>SELAMAT DATANG DI SEPHORA!</h1>
+      <button onClick={loginn}
+      style={{ marginTop: "25px" }}
+      className="btn btn-success"
+      >Log in</button>
     </div>
   );
 }
 function AuthButton() {
-  let history = useHistory();
+  
   return fakeAuth.isAuthenticated ? (
-    <p>
+    <h1 className="countainer">
       Terimakasih Telah Berkunjung Ke SEPHORA{""}
-      <button onClick={() => { fakeAuth.signout(() => history.push("/public")); }}>Back To Home</button>
-    </p>
+    </h1>
   ) : (
       <p>
 
       </p>
     );
+}
+
+function LogOut() {
+  let history = useHistory();
+  return (
+    <div className="container">
+        <h1 className="countainer">
+      Terimakasih Telah Berkunjung Ke SEPHORA{""}
+      <br/>
+      <button onClick={() => { 
+        fakeAuth.signout(() => history.push("/loginn")); 
+        }}
+        style={{ marginTop: "25px", }} 
+        className="btn btn-success center-block"
+        
+        >Back To Home</button>
+    </h1>
+    </div>
+    
+  );
 }
 
 
@@ -145,7 +172,7 @@ function PrivateRoute({ children, ...rest }) {
         ) : (
             <Redirect
               to={{
-                pathname: "/login",
+                pathname: "/loginn",
                 state: { from: location }
               }}
             />
@@ -228,18 +255,8 @@ function SkincarePage() {
   );
 };
 
-function ProtectedPage() {
-  return <h3>Private</h3>;
-}
+
 function LoginPage() {
-  let history = useHistory();
-  let location = useLocation();
-  let { from } = location.state || { from: { pathname: "/" } };
-  let login = () => {
-    fakeAuth.Authenticate(() => {
-      history.replace(from);
-    });
-  };
   return (
     <div className="card-deck" style={{width:  'max-content', height: 'max-content'}}>
       <div className="card">
@@ -249,13 +266,13 @@ function LoginPage() {
           <p className="card-text">Best Popular cosmetics</p>
         </div>
         <div className="card-footer">
-          <button onClick={login} type="button" className="btn btn-secondary btn-lg btn-block">EYE PRIMER</button>
+          <button type="button" className="btn btn-secondary btn-lg btn-block">EYE PRIMER</button>
           <img className="img-catalog" src={alis} alt="Card cap" />
           <div className="card-body">
           <h5 className="card-title">BENEFIT COSMETIC</h5>
           <p className="card-text">Best Popular cosmetics</p>
         </div>
-          <button onClick={login} type="button" className="btn btn-secondary btn-lg btn-block">ALIS</button>
+          <button type="button" className="btn btn-secondary btn-lg btn-block">ALIS</button>
           </div>
       </div>
       <div className="card">
@@ -265,13 +282,13 @@ function LoginPage() {
           <p className="card-text">Best Popular cosmetics</p>
         </div>
         <div className="card-footer">
-          <button onClick={login} type="button" className="btn btn-secondary btn-lg btn-block">LIPSTICK</button>
+          <button type="button" className="btn btn-secondary btn-lg btn-block">LIPSTICK</button>
           <img className="img-catalog" src={bedak} alt="Card cap" />
           <div className="card-body">
           <h5 className="card-title">DIOR</h5>
           <p className="card-text">Best Popular cosmetics</p>
         </div>
-          <button onClick={login} type="button" className="btn btn-secondary btn-lg btn-block">BEDAK</button>
+          <button type="button" className="btn btn-secondary btn-lg btn-block">BEDAK</button>
           
         </div>
       </div>
@@ -283,13 +300,13 @@ function LoginPage() {
           <p className="card-text">A high perfection, long-wearing foundation formula that offers a 24-hour </p>
         </div>
         <div className="card-footer">
-          <button onClick={login} type="button" className="btn btn-secondary btn-lg btn-block">FOUNDATION</button>
+          <button type="button" className="btn btn-secondary btn-lg btn-block">FOUNDATION</button>
           <img className="img-catalog" src={perona} alt="Card cap" />
           <div className="card-body">
           <h5 className="card-title">BENEFIT COSMETICS</h5>
           <p className="card-text">Best Popular cosmetics</p>
         </div>
-          <button onClick={login} type="button" className="btn btn-secondary btn-lg btn-block">PERONA PIPI</button>
+          <button type="button" className="btn btn-secondary btn-lg btn-block">PERONA PIPI</button>
         </div>
 
       </div>
@@ -297,45 +314,6 @@ function LoginPage() {
   );
 }
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <div className="nav">
-          <ul>
-            <li><Link to="/beranda">Beranda</Link>
-            </li>
-            <li>
-              <Link to="/produk">Product</Link>
-            </li>
-            <li>
-              <Link to="/profil">Profile</Link>
-            </li>
-            <AuthButton />
-          </ul>
-
-          <Switch>
-            <Route path="/beranda">
-              <BerandaPage />
-            </Route>
-            <Route path="/login">
-              <LoginPage />
-            </Route>
-            <Route path="/skincare">
-              <skincarePage />
-            </Route>
-            <PrivateRoute path="/produk">
-              <ProtectedPage />
-            </PrivateRoute>
-            <PrivateRoute path="/private">
-              <ProtectedPage />
-            </PrivateRoute>
-          </Switch>
-        </div>
-      </div>
-    </Router>
-  );
-}
 function BerandaPage() {
   return (
     <div>

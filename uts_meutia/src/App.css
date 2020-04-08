@@ -36,7 +36,11 @@
     transform: rotate(360deg);
   }
 }
-
+.container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .inidiganti{
   width: 100%;
 }

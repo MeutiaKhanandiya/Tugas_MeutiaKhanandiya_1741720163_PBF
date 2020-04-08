@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = compose(window.devToolsExtension ? window.devToolsExtension() : f => f)
 (createStore)(MainReducer) 
-ReactDOM.render(<Provider store={store}> 
+ReactDOM.render(<Provider store={store}>
   <App /> 
   </Provider> ,
   document.getElementById('root')

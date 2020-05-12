@@ -1,0 +1,51 @@
+[debug] [2020-05-11T13:52:57.593Z] ----------------------------------------------------------------------
+[debug] [2020-05-11T13:52:57.595Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\MEUTIA KHANANDIYA\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2020-05-11T13:52:57.595Z] CLI Version:   8.2.0
+[debug] [2020-05-11T13:52:57.595Z] Platform:      win32
+[debug] [2020-05-11T13:52:57.595Z] Node Version:  v10.15.3
+[debug] [2020-05-11T13:52:57.597Z] Time:          Mon May 11 2020 20:52:57 GMT+0700 (Western Indonesia Time)
+[debug] [2020-05-11T13:52:57.597Z] ----------------------------------------------------------------------
+[debug] [2020-05-11T13:52:57.597Z] 
+[debug] [2020-05-11T13:52:57.604Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-11T13:52:57.604Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  F:\SEMESTER 6\Tugas_MeutiaKhanandiya_1741720163_PBF\Tugas_MeutiaKhanandiya_1741720163_PBF
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project.
+[debug] [2020-05-11T13:53:34.443Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects  
+ {"projectId":"uasmeutia","name":"uasmeutia"}
+[debug] [2020-05-11T13:53:36.046Z] <<< HTTP RESPONSE 409 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Mon, 11 May 2020 13:53:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1076","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-11T13:53:36.046Z] <<< HTTP RESPONSE BODY {"error":{"code":409,"message":"Requested entity already exists","status":"ALREADY_EXISTS"}}
+[debug] [2020-05-11T13:53:36.048Z] HTTP Error: 409, Requested entity already exists
+[debug] [2020-05-11T13:53:36.805Z] FirebaseError: HTTP Error: 409, Requested entity already exists
+    at module.exports (C:\Users\MEUTIA KHANANDIYA\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Request._callback (C:\Users\MEUTIA KHANANDIYA\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:41:35)
+    at Request.self.callback (C:\Users\MEUTIA KHANANDIYA\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:189:13)
+    at Request.EventEmitter.emit (domain.js:441:20)
+    at Request.<anonymous> (C:\Users\MEUTIA KHANANDIYA\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:1154:10)
+    at Request.emit (events.js:189:13)
+    at Request.EventEmitter.emit (domain.js:441:20)
+    at IncomingMessage.<anonymous> (C:\Users\MEUTIA KHANANDIYA\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (events.js:277:13)
+    at IncomingMessage.emit (events.js:194:15)
+    at IncomingMessage.EventEmitter.emit (domain.js:441:20)
+    at endReadableNT (_stream_readable.js:1125:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+[error] 
+[error] Error: Failed to create Google Cloud project. See firebase-debug.log for more info.

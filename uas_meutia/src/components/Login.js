@@ -12,11 +12,10 @@ import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
 
-
 const styles = () => ({
   "@global": {
     body: {
-      backgroundColor: "#fff",
+      backgroundColor: "#FFB6C1",
     },
   },
   paper: {
@@ -60,6 +59,7 @@ class Login extends Component {
       return <Redirect to="/" />;
     } else {
       return (
+
         <Container component="main" maxWidth="xs">
           <Paper className={classes.paper}>
             <Avatar className={classes.avatar}>
@@ -67,7 +67,9 @@ class Login extends Component {
             </Avatar>
             <Typography component="h1" variant="h5">
                 Victoria's Secret
-                <h1>Sign In</h1> 
+            </Typography>
+            <Typography component="h2" variant="h7">
+                Sign In
             </Typography>
             <TextField
               variant="outlined"
@@ -81,6 +83,7 @@ class Login extends Component {
             <TextField
               variant="outlined"
               margin="normal"
+              fullWidth
               fullWidthname="password"
               label="Password"
               type="password"

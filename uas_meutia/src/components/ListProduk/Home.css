@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  background: linear-gradient(
+    -45deg,
+    rgb(255, 255, 255)
+  );
+  background-attachment: fixed;
+  background-size: cover;
+}
+.img-top{
+  width: 100%;
+  height: 100%;
+}
+.img-catalog{
+  width: max-content;
+  height: max-content;
+}
+.connect{
+  padding: 10px;
+  margin-top: 10px;
+  align-items: center;
+  flex-direction: column;
+}
+* {
+  height: 100;
+  font-weight: 100;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 100;
+  border: 0;
+}
+
+.notesWrapper {
+  display: fixed;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: 200;
+}
+
+.notesHeader {
+  display: fixed;
+  flex: 1 1 5%;
+
+  font-size: 3.2em;
+  color: rgb(209, 83, 125);
+  font-family: "Permanent Marker", Lucida;
+  text-align: center;
+  padding: 20px 20px 20px 20px;
+  background-color: rgb(65, 10, 51);
+  display: fixed;
+}
+
+.notesBody {
+  padding-top: 50px;
+  display: fixed;
+  flex: 1 1 85%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  overflow: auto;
+}
+
+.notesFooter {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(230, 117, 186);
+}

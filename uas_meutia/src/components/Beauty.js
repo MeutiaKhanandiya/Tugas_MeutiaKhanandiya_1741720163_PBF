@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { logoutUser } from "../actions/auth";
-import gambar2 from "../img2.jpg";
-import pink1 from "../img3.jpg"; 
 import logo from "../img4.jpg";
-import pink2 from "../img7.jpg";
-import pink3 from "../img8.jpg";
-class Home extends Component {
+import text from "../img5.jpg";
+import L1 from "../L1.jpg";
+import L2 from "../L2.jpg"; 
+import L3 from "../L3.jpg";
+import L4 from "../L4.jpg"; 
+import L5 from "../L5.jpg";
+
+class Beauty extends Component {
   handleLogout = () => {
     const { dispatch } = this.props;
     dispatch(logoutUser());
@@ -17,7 +20,6 @@ class Home extends Component {
       
       
       <div>
-        
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
             <a className="navbar-brand" class="text-danger" href="#">VICTORIA'S SECRET</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,23 +43,33 @@ class Home extends Component {
           <img className="img-catalog" src={logo} alt="Card cap" />
         </center>
         <br></br>
+        <center>
+          <img className="img-top" src={text} alt="Card cap" />
+        </center>
+        <br></br>
           <center>
-          <img className="img-top" src={pink1} alt="Card cap" />
+          <img className="img-top" src={L1} alt="Card cap" />
         </center>
           <br></br>
-          <center>
-          <img className="img-top" src={pink3} alt="Card cap" />
-        </center>
         <center>
-          <img className="img-top" src={gambar2} alt="Card cap" />
+          <img className="img-top" src={L2} alt="Card cap" />
         </center>
+        <br></br>
         <center>
-          <img className="img-top" src={pink2} alt="Card cap" />
+          <img className="img-top" src={L3} alt="Card cap" />
+        </center>
+        <br></br>
+        <center>
+          <img className="img-top" src={L4} alt="Card cap" />
+        </center>
+        <br></br>
+        <center>
+          <img className="img-top" src={L5} alt="Card cap" />
         </center>
         <div>
           
         </div>
-        <h1>Enjoy Your day!</h1>
+        <h1>Enjoy your day!</h1>
         {isAuthenticated && <p>Selamat! Anda Berhasil Login di Victoria's Secret</p>}
         <button onClick={this.handleLogout}>Logout</button>
         {isLoggingOut && <p>Logging Out....</p>}
@@ -74,5 +86,4 @@ function mapStateToProps(state) {
     isAuthenticated: state.auth.isAuthenticated
   };
 }
-
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(Beauty);

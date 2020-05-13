@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { logoutUser } from "../actions/auth";
-import gambar2 from "../img2.jpg";
-import pink1 from "../img3.jpg"; 
+import s1 from "../S1.jpg"; 
+import s2 from "../S2.jpg";
+import s3 from "../S3.jpg";
+import dis from "../img9.jpg";
 import logo from "../img4.jpg";
-import pink2 from "../img7.jpg";
-import pink3 from "../img8.jpg";
-class Home extends Component {
+
+class Accessories extends Component {
   handleLogout = () => {
     const { dispatch } = this.props;
     dispatch(logoutUser());
@@ -17,7 +18,6 @@ class Home extends Component {
       
       
       <div>
-        
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
             <a className="navbar-brand" class="text-danger" href="#">VICTORIA'S SECRET</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,23 +41,25 @@ class Home extends Component {
           <img className="img-catalog" src={logo} alt="Card cap" />
         </center>
         <br></br>
+        <center>
+          <img className="img-top" src={dis} alt="Card cap" />
+        </center>
+        <br></br>
           <center>
-          <img className="img-top" src={pink1} alt="Card cap" />
+          <img className="img-top" src={s1} alt="Card cap" />
         </center>
           <br></br>
-          <center>
-          <img className="img-top" src={pink3} alt="Card cap" />
-        </center>
         <center>
-          <img className="img-top" src={gambar2} alt="Card cap" />
+          <img className="img-top" src={s2} alt="Card cap" />
         </center>
+        <br></br>
         <center>
-          <img className="img-top" src={pink2} alt="Card cap" />
+          <img className="img-top" src={s3} alt="Card cap" />
         </center>
         <div>
           
         </div>
-        <h1>Enjoy Your day!</h1>
+        <h1>Enjoy your day!</h1>
         {isAuthenticated && <p>Selamat! Anda Berhasil Login di Victoria's Secret</p>}
         <button onClick={this.handleLogout}>Logout</button>
         {isLoggingOut && <p>Logging Out....</p>}
@@ -70,9 +72,8 @@ class Home extends Component {
 function mapStateToProps(state) {
   return {
     isLoggingOut: state.auth.isLoggingOut,
-    logoutError: state.auth.logoutError,
+    logoutError: state.auth.Error,
     isAuthenticated: state.auth.isAuthenticated
   };
 }
-
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(Accessories);

@@ -1,0 +1,67 @@
+.formWrapper {
+  margin: auto;
+}
+
+.noteButton {
+  border: none;
+  margin: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 8px 24px;
+  font-size: 1.3em;
+  font-family: "Droid Sans", sans-serif;
+  background-color: 	#FF1493;
+  color: #fff;
+  transition: 0.2s ease-out;
+}
+
+.btn-Signout {
+  border: none;
+  margin: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 8px 24px;
+  font-size: 1.3em;
+  font-family: "Droid Sans", sans-serif;
+  background-color: #DB7093;
+  color: #fff;
+  transition: 0.2s ease-out;
+}
+
+.btn-Delete {
+  border: none;
+  margin: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 8px 24px;
+  font-size: 1.3em;
+  font-family: "Droid Sans", sans-serif;
+  background-color: 	#FF69B4;
+  color: #fff;
+  transition: 0.2s ease-out;
+}
+
+.noteButton:hover {
+  background-color: #02ba85;
+  color: #fff;
+  transition: 0.2s ease-out;
+}
+
+.noteInput {
+  width: 800px;
+  min-width: 800px;
+  font-size: 1.3em;
+  padding-left: 20px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  font-family: "Droid Sans", sans-serif;
+  background-color: rgba(63, 34, 58, 0.8);
+  color: #fff;
+  transition: 0.2s ease-out;
+}
+
+.noteInput:focus {
+  background-color: #e4f1fe;
+  color: #C71585;
+  transition: 0.2s ease-in;
+}

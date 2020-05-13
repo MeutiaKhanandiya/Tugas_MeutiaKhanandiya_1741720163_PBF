@@ -11,6 +11,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import Container from "@material-ui/core/Container";
+import L5 from "../img1.jpg";
+import Z from "../HAHA.jpg";
 
 const styles = () => ({
   "@global": {
@@ -19,8 +21,8 @@ const styles = () => ({
     },
   },
   paper: {
-    marginTop: 100,
-    display: "flex",
+    // marginTop: 100,
+    display: "fixed",
     padding: 20,
     flexDirection: "column",
     alignItems: "center",
@@ -61,15 +63,24 @@ class Login extends Component {
       return (
 
         <Container component="main" maxWidth="xs">
+           <Typography component="h1" variant="h5">
+           <img className="img-top" src={L5} alt="Card cap" />
+            </Typography>
+            <Typography component="h1" variant="h5">
+           <img className="img-top" src={Z} alt="Card cap" />
+            </Typography>
+            <Typography component="h1" variant="h5">
+          <center>40% OFF ACCESSORIES</center>
+            </Typography>
           <Paper className={classes.paper}>
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-                Victoria's Secret
+                <center>Victoria's Secret</center>
             </Typography>
             <Typography component="h2" variant="h7">
-                Sign In
+                <center>Login</center>
             </Typography>
             <TextField
               variant="outlined"
@@ -95,6 +106,7 @@ class Login extends Component {
                 Incorrect email or password.
               </Typography>
             )}
+            
             <Button
               type="button"
               fullWidth
@@ -104,6 +116,20 @@ class Login extends Component {
               onClick={this.handleSubmit}
             >
               Sign In
+            </Button>
+            
+            <Typography component="h2" variant="h5">
+                <center>Create An Account</center>
+            </Typography>
+            <Button
+              type="button"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              onClick={this.handleSubmit}
+            >
+              Register
             </Button>
           </Paper>
         </Container>

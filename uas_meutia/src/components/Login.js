@@ -32,9 +32,9 @@ const styles = () => ({
     marginRight: "auto",
     backgroundColor: "#f50057",
   },
-  form: {
-    marginTop: 1,
-  },
+  // form: {
+  //   marginTop: ,
+  // },
   errorText: {
     color: "#f50057",
     marginBottom: 5,
@@ -117,20 +117,7 @@ class Login extends Component {
             >
               Sign In
             </Button>
-            
-            <Typography component="h2" variant="h5">
-                <center>Create An Account</center>
-            </Typography>
-            <Button
-              type="button"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-              onClick={this.handleSubmit}
-            >
-              Register
-            </Button>
+          
           </Paper>
         </Container>
       );
